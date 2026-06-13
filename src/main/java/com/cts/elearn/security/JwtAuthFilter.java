@@ -25,6 +25,7 @@ public class JwtAuthFilter implements GlobalFilter {
         if (path.startsWith("/users/login")
                 || path.startsWith("/users/register")
                 || path.startsWith("/swagger")
+                || path.startsWith("/users/test")
                 || path.startsWith("/v3/api-docs")) {
             return chain.filter(exchange);
         }

@@ -27,7 +27,15 @@ public class JwtAuthFilter implements GlobalFilter {
                 || path.startsWith("/notifications/")
                 || path.startsWith("/review/")
                 || path.startsWith("/purchase-history/")
+
+                || path.startsWith("/user-service/")
+                || path.startsWith("/course-service/")
+                || path.startsWith("/notification-service/")
+                || path.startsWith("/purchase-service/")
+                || path.startsWith("/review-service/")
+
                 || path.startsWith("/swagger")
+                || path.startsWith("/swagger-ui")
                 || path.startsWith("/v3/api-docs")) {
 
             return chain.filter(exchange);

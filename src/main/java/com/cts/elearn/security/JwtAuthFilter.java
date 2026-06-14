@@ -22,11 +22,14 @@ public class JwtAuthFilter implements GlobalFilter {
         String path = exchange.getRequest().getPath().toString();
 
         // Public endpoints
-        if (path.startsWith("/users/login")
-                || path.startsWith("/users/register")
+        if (path.startsWith("/users/")
+                || path.startsWith("/courses/")
+                || path.startsWith("/notifications/")
+                || path.startsWith("/review/")
+                || path.startsWith("/purchase-history/")
                 || path.startsWith("/swagger")
-                || path.startsWith("/users/test")
                 || path.startsWith("/v3/api-docs")) {
+
             return chain.filter(exchange);
         }
 

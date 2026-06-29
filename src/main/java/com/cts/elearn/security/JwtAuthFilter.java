@@ -21,11 +21,7 @@ public class JwtAuthFilter implements GlobalFilter {
 
         String path = exchange.getRequest().getPath().toString();
 
-        // Public endpoints
-        if (path.startsWith("/users/login")
-                || path.startsWith("/users/register")
-                || path.startsWith("/swagger")
-                || path.startsWith("/v3/api-docs")) {
+        if (isPublicEndpoint(path)) {
             return chain.filter(exchange);
         }
 
@@ -61,4 +57,23 @@ public class JwtAuthFilter implements GlobalFilter {
 
         return chain.filter(exchange);
     }
+    private boolean isPublicEndpoint(String path) {
+
+        return path.startsWith("/users")
+                || path.startsWith("/courses")
+                || path.startsWith("/notifications")
+                || path.startsWith("/review")
+                || path.startsWith("/reviews")
+                || path.startsWith("/purchase-history")
+                || path.startsWith("/purchase")
+                || path.startsWith("/swagger")
+                || path.startsWith("/swagger-ui")
+                || path.startsWith("/v3/api-docs")
+                || path.startsWith("/user-service")
+                || path.startsWith("/course-service")
+                || path.startsWith("/notification-service")
+                || path.startsWith("/purchase-service")
+                || path.startsWith("/review-service");
+    }
+
 }

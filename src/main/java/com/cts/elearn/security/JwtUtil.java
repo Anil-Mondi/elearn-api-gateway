@@ -1,6 +1,7 @@
 package com.cts.elearn.security;
 
-import io.jsonwebtoken.*;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
 import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;

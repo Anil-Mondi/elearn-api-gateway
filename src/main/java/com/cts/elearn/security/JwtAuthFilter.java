@@ -57,6 +57,7 @@ public class JwtAuthFilter implements GlobalFilter {
 
         return chain.filter(exchange);
     }
+
     private boolean isPublicEndpoint(String path) {
 
         return path.startsWith("/users")

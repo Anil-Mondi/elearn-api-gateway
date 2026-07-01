@@ -1,0 +1,19 @@
+==============================================================
+
+                    E-Learn Platform
+
+                    API Gateway
+
+--------------------------------------------------------------
+
+Java 17
+Spring Boot 3
+Spring Cloud Gateway
+Microservices
+Kafka
+Redis
+Docker
+Prometheus
+Grafana
+
+==============================================================
